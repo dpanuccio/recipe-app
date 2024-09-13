@@ -1,0 +1,242 @@
+/* Modern styling for the app */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(135deg, #007BFF, #00C6FF);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding: 20px 0;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#recipeResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.recipe {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.recipe.show {
+    opacity: 1;
+}
+
+.recipe:hover {
+    transform: translateY(-5px);
+}
+
+.recipe img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-details {
+    padding: 15px;
+}
+
+.recipe-details a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.recipe-details a:hover {
+    color: #0056b3;
+}
+
+.recipe-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.suggestions {
+    position: absolute;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007BFF;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.search-feedback {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-history {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-history h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.search-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.search-history li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-history li:hover {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    input, button {
+        width: 90%;
+    }
+
+    #recipeResults {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}

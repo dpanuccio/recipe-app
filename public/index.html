@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Recipe Search</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for recipes...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="suggestions" class="suggestions"></div>
+        <div id="loader" class="loader"></div>
+        <div id="recipeResults"></div>
+        <div id="searchFeedback" class="search-feedback"></div>
+
+        <div id="searchHistory" class="search-history">
+            <h2>Search History</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Recipe Search All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
