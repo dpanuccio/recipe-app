@@ -212,31 +212,91 @@ footer p {
     font-size: 1rem;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    input, button {
-        width: 90%;
-    }
-
-    #recipeResults {
-        grid-template-columns: 1fr;
-    }
-
-    .recipe img {
-        height: 150px;
-    }
+/* Carousel Container */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
+/* Carousel Items */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
 
-    input, button {
-        width: 100%;
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 300px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item .recipe-details {
+    padding: 15px;
+}
+
+.carousel-item .recipe-details a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.carousel-item .recipe-details a:hover {
+    color: #0056b3;
+}
+
+.carousel-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 200px;
     }
 }
